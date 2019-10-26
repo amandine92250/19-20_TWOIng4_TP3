@@ -14,19 +14,83 @@ class API_WEATHER{
     if(city === undefined){
       city = "paris";
     }
+    
     this.city = city;
+    
   }
+/*
+  valenter()
+    {  
+       var searchCity=document.getElementById('city-input').value;
+        if (searchCity)
+            {
+             var city=searchCity;
+            }
+        alert(searchCity);
+             
+}
+  
+   document.getElementById('city-input-button').addEventListener('click',() => {
+        let searchCity=document.getElementById('city-input').value;
+        if (searchCity)
+            {
+                city=searchCity;
+               
+            }
+    })
+         alert(city);
+    
+    }
+    
+inputCity()
+    {
+        document.getElementById('city-input-button').addEventListener('click',() => {
+        let searchCity=document.getElementById('city-input').value;
+        if (searchCity)
+            {
+                city=searchCity;
+               
+            }
+    })
+         alert(city);
+    
+    }
+      
+    searchWeather(city)
+    {
+          fetch(`${API_URL}?q=${this.city}&units=metric&appid=${API_KEY}`).then(result =>
+          { 
+              return result.json();
+      }).then(result =>{
+              console.log(result);
+          })
+    }
+    */
+    
 
   // Faire la requete à l'API openweathermap
   // Retourne une promise
+	
+	
   fetchTodayForecast(){
+       
     return axios
     .get(`${API_URL}?q=${this.city}&units=metric&appid=${API_KEY}`, {
       crossdomain: true
     })
   }
-  // Retourne l'element HTML de l'icon symbolisant la méteo.
+	/*
+ getThreeDayForecast(){
+	  return `${API_URL}?q=${this.city}&mode=xml&units=metric&cnt=3`, {
+      crossdomain: true
+    })
+ }*/
+   
+  
+// Retourne l'element HTML de l'icon symbolisant la méteo.
   getHTMLElementFromIcon(icon){
     return `<img src=${API_URL_ICON}${icon}@2x.png class="weather-icon"/>`
   }
+
+
 }

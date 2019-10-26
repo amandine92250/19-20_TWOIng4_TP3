@@ -16,11 +16,17 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
+            
     ></script>
+      
     <!-- Axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      
+      <script type="text/javascript" src="script.js"></script>
+
   </head>
-  <body>
+  <body onload="start();">
+    
     <div
       class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -37,8 +43,9 @@
     <div class="container">
       <div class="input-group mb-5 offset-4 col-4">
         <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville">
+        
         <div class="input-group-append">
-          <button id="city-input-button" class="btn btn-success" type="submit">Actualiser</button>
+          <button id="city-input-button" class="btn btn-success" type="submit" onclick="valenter()">Actualiser</button>
         </div>
       </div>
     </div>
@@ -57,9 +64,11 @@
                 <div id="icon-weather-container" ></div>
                 <h3 id="today-forecast-temp"> </h3>
               </div>
-              <button type="button" class="btn btn-lg btn-block btn-primary button-load-forecast" onclick='start()'>
+                
+              <!--<button type="button" class="btn btn-lg btn-block btn-primary button-load-forecast" onclick='start()'>
                 Quel temps fait'il aujourd'hui ?
-              </button>
+              </button>-->
+
             </div>
           </div>
         </div>
@@ -71,12 +80,12 @@
             <h4 class="my-0 font-weight-normal">Demain</h4>
           </div>
           <div class="card-body">
-            <h2 id="today-forecast-main" class="card-title">
+            <h2 id="demain-forecast-main" class="card-title">
             </h2>
             <div>
-              <p id="today-forecast-more-info"></p>
-              <div id="icon-weather-container" ></div>
-              <h3 id="today-forecast-temp"> </h3>
+              <p id="demain-forecast-more-info"></p>
+              <div id="demain-icon-weather-container" ></div>
+              <h3 id="demain-forecast-temp"> </h3>
             </div>
           </div>
         </div>
@@ -87,6 +96,7 @@
           <div class="card-body">
             <h2 id="today-forecast-main" class="card-title">
             </h2>
+			  
             <div>
               <p id="today-forecast-more-info"></p>
               <div id="icon-weather-container" ></div>
@@ -112,5 +122,6 @@
     </div>
     <script src="js/API_Weather.js"></script>
     <script src="js/script.js"></script>
+      </div>
   </body>
 </html>
