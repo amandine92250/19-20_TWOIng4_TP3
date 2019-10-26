@@ -4,8 +4,10 @@
 const API_KEY = "4081444b7b90198136fefe6ed4ccf35b";
 // Url API
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
+const API_URL2="https://api.openweathermap.org/data/2.5/forecast/daily"
 // Base source icon
 const API_URL_ICON = "http://openweathermap.org/img/wn/";
+
 
 
 class API_WEATHER{
@@ -79,14 +81,18 @@ inputCity()
       crossdomain: true
     })
   }
-	/*
- getThreeDayForecast(){
-	  return `${API_URL}?q=${this.city}&mode=xml&units=metric&cnt=3`, {
+	
+	
+	
+ThreeDayForecast(){
+	return axios
+    .get(`${API_URL2}?q=${this.city}&units=metric&appid=${API_KEY}&metric&cnt=3`, {
       crossdomain: true
     })
- }*/
-   
-  
+ }
+	/*
+https://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=units=metric&appid=4081444b7b90198136fefe6ed4ccf35b&metric&cnt=3
+  */
 // Retourne l'element HTML de l'icon symbolisant la méteo.
   getHTMLElementFromIcon(icon){
     return `<img src=${API_URL_ICON}${icon}@2x.png class="weather-icon"/>`
