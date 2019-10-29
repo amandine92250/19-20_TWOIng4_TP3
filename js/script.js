@@ -1,18 +1,7 @@
 // Fonction appelée lors du click du bouton
 function start() {
   // Création de l'objet apiWeather
-       /*document.getElementById('city-input-button').addEventListener('click',() => {
-        let searchCity=document.getElementById('city-input').value;
-        if (searchCity)
-            {
-                city=searchCity;
-               
-            }
-           alert(city);
-    })*/
-
-	 
-	
+  
 	const apiWeather = new API_WEATHER();
 	
   // Appel de la fonction fetchTodayForecast     
@@ -49,16 +38,17 @@ function start() {
     });
 }
 
+// Fonction qui est lancé lors du click sur le bouton de soumission de ville
   function valenter()
     {  
-         
+         //On récupre la valeur de l'input
        var searchCity=document.getElementById('city-input').value;
         if (searchCity)
             {
              var city=searchCity;
             }
        
-        
+        //on récupere les données de la nouvelle ville
 const apiWeather = new API_WEATHER(searchCity);
         apiWeather.fetchTodayForecast()
     .then(function(response) {
@@ -82,6 +72,7 @@ const apiWeather = new API_WEATHER(searchCity);
       
     })
 		
+	//Appel de la fonciton qui reoturne les données météo des trois prochain jours de la ville voulue
 		getThreeDayForecast(searchCity)
 		
    
@@ -92,12 +83,12 @@ const apiWeather = new API_WEATHER(searchCity);
              
 }
 
-
+//Fonction qui va permettre d'afficher les données des trois prochains jours de la ville
 function getThreeDayForecast(city)
 {  
 	const apiWeather = new API_WEATHER(city);
 
-        apiWeather.ThreeDayForecast()
+     apiWeather.ThreeDayForecast()
     .then(function(response) {
       // Récupère la donnée d'une API
       const data = response.data;
